@@ -37,9 +37,9 @@
 }
 
 /* Styling for whole site */
-/* html {
+html {
     scroll-behavior: smooth;
-  } */
+  }
 ul {
     list-style: none;
 }
@@ -304,6 +304,7 @@ header .navbar {
 }
 
 .testimonial-section .testimonial {
+    user-select: none;
     display: flex;
     padding: 35px;
     text-align: center;
@@ -410,9 +411,11 @@ header .navbar {
     border-radius: var(--border-radius-s);
     border: 1px solid var(--medium-gray-color);
 }
+
 .contact-section .contact-form {
     max-width: 50%;
 }
+
 .contact-section .contact-form .form-input:focus {
     border-color: var(--secondary-color);
 }
@@ -434,9 +437,46 @@ header .navbar {
     border: 1px solid var(--primary-color);
     transition: 0.3s ease;
 }
+
 .contact-section .contact-form .submit-button:hover {
     color: var(--primary-color);
     background: transparent;
+}
+
+/* Footer Section Styling */
+.footer-section {
+    padding: 20px 0;
+    background: var(--dark-color);
+}
+
+.footer-section .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-section :where(.copyright-text, .social-link, .policy-link) {
+    color: var(--white-color);
+    transition: 0.2s ease;
+}
+
+.footer-section .social-link-list {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-section .social-link-list .social-link {
+    font-size: var(--font-size-l);
+}
+
+.footer-section .social-link-list .social-link:hover,
+.footer-section .policy-text .policy-link:hover {
+    color: var(--secondary-color);
+}
+
+.footer-section .policy-text .separator {
+    margin: 0 5px;
+    color: var(--white-color);
 }
 
 
@@ -527,7 +567,8 @@ header .navbar {
     }
 
     .hero-section .hero-details :is(.subtitle, .description),
-    .about-section .about-details, .contact-section .contact-form {
+    .about-section .about-details,
+    .contact-section .contact-form {
         max-width: 100%;
     }
 
@@ -544,7 +585,7 @@ header .navbar {
 
     .about-section .section-content {
         gap: 70px;
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .about-section .about-image-wrapper .about-image {
@@ -573,6 +614,7 @@ header .navbar {
     .gallery-section .gallery-list .gallery-item {
         width: calc(100% / 2 - 30px);
     }
+
     .contact-section .section-content {
         align-items: center;
         flex-direction: column-reverse;
@@ -597,6 +639,9 @@ header .navbar {
     .testimonial-section .swiper-slide-button {
         display: none;
     }
-
+    .footer-section .section-content {
+        flex-direction: column;
+        gap: 20px;
+    }
 
 }
